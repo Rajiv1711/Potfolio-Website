@@ -16,7 +16,17 @@ document.addEventListener("DOMContentLoaded", function() {
       {
         title: "Portfolio Website",
         description: "A responsive and interactive portfolio website using HTML, CSS, and Bootstrap.",
-        link: "#"
+        link: "https://github.com/Rajiv1711/Potfolio-Website.git"
+      },
+      {
+        title: "Next Word Prediction",
+        description: "This project is a simpler version of autocomplete keyboard.",
+        link: "https://github.com/Rajiv1711/Next_Word_prediction.git"
+      },
+      {
+        title: "Driver's Drowsiness Sensor",
+        description: "This is a Embedded technology Project for the safety of overnight drivers.",
+        link: "https://github.com/Rajiv1711/Driver-s-Drowsiness-Sensor-ET-.git"
       }
     ];
   
@@ -40,6 +50,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('contact-form');
     const responseMessage = document.getElementById('response-message');
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxfDotKr4EjxzVG5c4956tKFIG7uz8izeWpRVwcNRTyuuRI2uA3pV-fBfJ1iEsyS_nd/exec';
+    document.querySelectorAll('.add-link-btn').forEach(button => {
+      button.addEventListener('click', () => {
+          const link = prompt('Enter the certification link:');
+          if (link) {
+              const certDiv = button.parentElement;
+              const newLink = document.createElement('a');
+              newLink.href = link;
+              newLink.textContent = 'Added Certification Link';
+              newLink.className = 'view-certificate-btn';
+              certDiv.appendChild(newLink);
+          }
+      });
+  });
   
     form.addEventListener('submit', function(e) {
         e.preventDefault();
